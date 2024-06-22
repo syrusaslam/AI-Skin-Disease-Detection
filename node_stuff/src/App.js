@@ -12,9 +12,7 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>SSD AI</h1>
-      </header>
+      <Header />
       <div className="main-content">
         <Info />
         <div className="upload-container">

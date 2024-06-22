@@ -26,11 +26,18 @@ function UploadForm({ onUpload }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="upload-form">
-      <input type="file" accept=".jpg,.jpeg" onChange={handleChange} />
-      {error && <p className="error">{error}</p>}
-      <button type="submit" disabled={!file}>Upload</button>
-    </form>
+    <>
+      <form onSubmit={handleSubmit} className="upload-form">
+        <input type="file" accept=".jpg,.jpeg" onChange={handleChange} />
+        {error && <p className="error">{error}</p>}
+        <button type="submit" disabled={!file}>Upload</button>
+      </form>
+        {file && (
+          <div className="image-preview">
+            <img src={URL.createObjectURL(file)} alt="Preview" />
+          </div>
+        )}
+    </>
   );
 }
 
