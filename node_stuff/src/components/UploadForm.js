@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './UploadForm.css';
 
-function UploadForm({ onUpload }) {
+function UploadForm() {
   const [file, setFile] = useState(null);
   const [error, setError] = useState('');
 
@@ -18,10 +18,29 @@ function UploadForm({ onUpload }) {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (file) {
-      onUpload(file);
+      try {
+        const formData = new FormData();
+        formData.append('file', file);
+
+        // Make a POST request to your Flask backend
+        const response = await fetch('http://localhost:5000/upload', {
+          method: 'POST',
+          body: formData,
+        });
+
+        if (!response.ok) {
+          throw new Error('Failed to upload file');
+        }
+
+        // Handle successful upload
+        console.log('File uploaded successfully');
+      } catch (error) {
+        console.error('Error uploading file:', error.message);
+        setError('Failed to upload file');
+      }
     }
   };
 
