@@ -1,38 +1,96 @@
+/* src/App.css */
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  background-color: #121212; /* Dark background */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  color: #E0E0E0; /* Light text color */
+  font-family: 'Helvetica', 'Arial', sans-serif; /* Use Helvetica for main font */
+}
+
+.App-header {
+  background-color: #1E1E1E; /* Slightly lighter dark background */
+  min-height: 80px;
+  display: flex;
+  align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
+  color: #E0E0E0; /* Light text color */
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  font-family: 'Helvetica', 'Arial', sans-serif; /* Use Helvetica for header */
+  font-weight: 700;
+}
+
+.App-header h1 {
+  margin: 0;
+}
+
+.main-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px; /* Limit the width for better appearance */
+}
+
+.upload-container, .info-container {
+  background: #1E1E1E; /* Slightly lighter dark background */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.upload-container {
+  width: 60%; /* 2/3 of the screen */
+}
+
+.info-container {
+  width: 35%; /* 1/3 of the screen */
+  margin-right: 5%; /* Adjust for spacing between columns */
+}
+
+.upload-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.upload-container input {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #2C2C2C;
+  color: #E0E0E0;
+}
+
+.upload-container button {
+  padding: 10px 20px;
+  background-color: #6200EA; /* Accent color */
   color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-family: 'Helvetica', 'Arial', sans-serif; /* Use Helvetica for buttons */
+  font-weight: 700;
 }
 
-.App-link {
-  color: #61dafb;
+.upload-container button:disabled {
+  background-color: #424242;
+  cursor: not-allowed;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.upload-container button:hover:not(:disabled) {
+  background-color: #3700B3; /* Darker accent color */
+}
+
+.error {
+  color: #CF6679; /* Error color */
+  margin-bottom: 10px;
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './components/Header';
 import UploadForm from './components/UploadForm';
+import Info from './components/Info';
 import './App.css';
 
 function App() {
@@ -11,11 +12,17 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
-      <UploadForm onUpload={handleUpload} />
+      <header className="App-header">
+        <h1>SSD AI</h1>
+      </header>
+      <div className="main-content">
+        <Info />
+        <div className="upload-container">
+          <UploadForm onUpload={handleUpload} />
+        </div>
+      </div>
     </div>
   );
 }
 
 export default App;
-

@@ -1,0 +1,48 @@
+/* src/components/Info.css */
+.info-container {
+    background: #1E1E1E; /* Slightly lighter dark background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    font-family: 'Helvetica', 'Arial', sans-serif; /* Use Helvetica for main font */
+  }
+  
+  .info-container h2 {
+    margin-bottom: 20px;
+    color: #E0E0E0; /* Light text color */
+    font-family: 'Helvetica', 'Arial', sans-serif; /* Use Helvetica for headers */
+    font-weight: 700;
+  }
+  
+  .info-container ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .info-container ul li {
+    background: #2C2C2C; /* List item background color */
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+    color: #E0E0E0; /* Light text color */
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .info-container ul li:hover {
+    background: #424242;
+  }
+  
+  .dropdown-content {
+    display: none;
+    background: #333;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    color: #E0E0E0;
+  }
+  
+  ul li.active .dropdown-content {
+    display: block;
+  }
+  
