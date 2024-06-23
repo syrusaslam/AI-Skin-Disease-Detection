@@ -1,4 +1,13 @@
-/* src/App.css */
+/* Reset margin and padding for body and html */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden; /* Ensure no horizontal scroll bars */
+}
+
+/* App container styling */
 .App {
   text-align: center;
   background-color: #121212; /* Dark background */
@@ -7,11 +16,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: 20px;
   color: #E0E0E0; /* Light text color */
   font-family: 'Helvetica', 'Arial', sans-serif; /* Use Helvetica for main font */
+  box-sizing: border-box; /* Include border in the element's total width and height */
 }
 
+/* Header styling */
 .App-header {
   background-color: #1E1E1E; /* Slightly lighter dark background */
   min-height: 80px;
@@ -31,15 +41,17 @@
   margin: 0;
 }
 
+/* Main content styling */
 .main-content {
   display: flex;
   justify-content: space-between;
   width: 100%;
   max-width: 1200px; /* Limit the width for better appearance */
+  margin-bottom: 20px;
 }
 
 .upload-container, .info-container {
-  background: #1E1E1E; /* Slightly lighter dark background */
+  background: #1E1E1E; /* Dark background */
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -71,7 +83,7 @@
 
 .upload-container button {
   padding: 10px 20px;
-  background-color: #6300c6; /* Accent color */
+  background-color: #4b8dff; /* Blue accent color */
   color: white;
   border: none;
   border-radius: 5px;
@@ -87,10 +99,42 @@
 }
 
 .upload-container button:hover:not(:disabled) {
-  background-color: #3700B3; /* Darker accent color */
+  background-color: #3d6bff; /* Darker accent color */
 }
 
 .error {
   color: #CF6679; /* Error color */
   margin-bottom: 10px;
+}
+
+/* Disclaimer and Info Button Styles */
+
+.disclaimer-button,
+.info-button {
+  position: fixed;
+  bottom: 20px;
+  padding: 5px 10px; /* Small button size */
+  background-color: #4b8dff; /* Blue accent color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Helvetica', 'Arial', sans-serif; /* Use Helvetica for buttons */
+  font-weight: 700;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s;
+  font-size: 14px; /* Smaller font size */
+}
+
+.disclaimer-button {
+  right: 20px;
+}
+
+.info-button {
+  right: 100px; /* Adjust position if needed */
+}
+
+.disclaimer-button:hover,
+.info-button:hover {
+  background-color: #3d6bff; /* Darker blue on hover */
 }

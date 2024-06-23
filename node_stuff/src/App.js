@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from './components/Header';
 import UploadForm from './components/UploadForm';
 import Info from './components/Info';
+import DisclaimerModal from './components/DisclaimerModal';
 import './App.css';
 
 function App() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
 
   return (
     <div className="App">
@@ -15,6 +21,8 @@ function App() {
           <UploadForm />
         </div>
       </div>
+      <button className="disclaimer-button" onClick={toggleModal}>Disclaimer</button>
+      {isModalOpen && <DisclaimerModal onClose={toggleModal} />}
     </div>
   );
 }

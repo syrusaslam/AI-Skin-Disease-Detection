@@ -1,9 +1,17 @@
 .header {
-    background-color: #2a313d;
-    padding: 20px;
-    border-radius: 30px;
-    border-style: inset;
-    font-size: 20px;
-    color: white;
-    text-align: center;
-  }
+  background-color: #2a313d;
+  padding: 20px;
+  border-radius: 30px;
+  border-style: inset;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.subtext {
+  font-size: 16px; /* Adjust the size as needed */
+  color: white; /* Adjust the color as needed */
+  margin-top: 10px; /* Space between the main text and subtext */
+  text-transform: none; /* Ensure the subtext is not uppercase */
+}

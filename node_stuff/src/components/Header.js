@@ -4,7 +4,8 @@ import './Header.css';
 function Header() {
   return (
     <header className="header">
-      <h1>AI Skin Disease Detection</h1>
+      <h1>SDD.AI</h1>
+      <p className="subtext">Your AI-powered Skin Disease Detection</p>
     </header>
   );
 }
