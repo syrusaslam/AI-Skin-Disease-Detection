@@ -2,30 +2,19 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import torch
-import torch.nn as nn
 from torchvision import transforms
 from PIL import Image
 import io
-import timm  # Ensure timm library is installed
 import os
+from model import ECL_model
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
 
-# Define the ViT model class
-class ViTDetector(nn.Module):
-    def __init__(self, backbone='resnet50', num_classes=10):
-        super().__init__()
-        self.backbone = timm.create_model(backbone, pretrained=True, num_classes=num_classes)
 
-    def forward(self, x):
-        x = self.backbone(x)
-        return x
-
-# Load your pre-trained ViT model
-model = ViTDetector()
-model_path = os.path.join(os.path.dirname(__file__), "checkpoints_resnet50_epoch1")
-model.load_state_dict(torch.load(model_path, map_location=torch.device('cpu')))
+model = ECL_model()
+model_path = os.path.join(os.path.dirname(__file__), "model-ISIC2019.pth")
+model.load_state_dict(torch.load(model_path, map_location=torch.device('cpu')),strict=True)
 model.eval()
 
 def transform_image(image_bytes):
@@ -39,7 +28,7 @@ def transform_image(image_bytes):
 def get_prediction(image_bytes):
     tensor = transform_image(image_bytes)
     outputs = model(tensor)
-    predicted_class = torch.argmax(outputs.data, dim=1).item()
+    predicted_class = torch.argmax(outputs, dim=1)
     return predicted_class
 
 @app.route('/upload', methods=['POST'])
@@ -54,7 +43,7 @@ def upload():
     if file:
         image_bytes = file.read()
         prediction = get_prediction(image_bytes)
-        return jsonify({'prediction': prediction}), 200
+        return jsonify({'prediction': int(prediction)}), 200
     
     return jsonify({'error': 'Something went wrong'}), 500
 
