@@ -24,7 +24,7 @@ class ViTDetector(nn.Module):
 
 # Load your pre-trained ViT model
 model = ViTDetector()
-model_path = os.path.join(os.path.dirname(__file__), "checkpoints_resnet50_epoch1")
+model_path = os.path.join(os.path.dirname(__file__), "checkpoints_resnet50_epoch19")
 model.load_state_dict(torch.load(model_path, map_location=torch.device('cpu')))
 model.eval()
 

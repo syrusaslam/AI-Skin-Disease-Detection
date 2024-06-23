@@ -1,9 +1,18 @@
 .header {
-    background-color: #2a313d;
-    padding: 20px;
-    border-radius: 30px;
-    border-style: inset;
-    font-size: 20px;
-    color: white;
-    text-align: center;
-  }
+  background-color: #1E1E1E; /* Dark background similar to the dashboard */
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #4b8dff; /* Blue border for accent */
+  font-size: 24px; /* Slightly larger font size */
+  color: #E0E0E0; /* Light text color */
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 20px; /* Space below the header */
+}
+
+.subtext {
+  font-size: 16px; /* Adjust the size as needed */
+  color: #4b8dff; /* Blue accent color */
+  margin-top: 10px; /* Space between the main text and subtext */
+  text-transform: none; /* Ensure the subtext is not uppercase */
+}

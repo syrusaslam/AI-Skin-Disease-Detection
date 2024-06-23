@@ -1,48 +1,46 @@
-/* src/components/Info.css */
 .info-container {
-    background: #1E1E1E; /* Slightly lighter dark background */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    font-family: 'Helvetica', 'Arial', sans-serif; /* Use Helvetica for main font */
-  }
-  
-  .info-container h2 {
-    margin-bottom: 20px;
-    color: #E0E0E0; /* Light text color */
-    font-family: 'Helvetica', 'Arial', sans-serif; /* Use Helvetica for headers */
-    font-weight: 700;
-  }
-  
-  .info-container ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .info-container ul li {
-    background: #4b8dff; /* List item background color */
-    margin: 5px 0;
-    padding: 10px;
-    border-radius: 5px;
-    color: #E0E0E0; /* Light text color */
-    cursor: pointer;
-    position: relative;
-  }
-  
-  .info-container ul li:hover {
-    background: #424242;
-  }
-  
-  .dropdown-content {
-    display: none;
-    background: rgb(255, 255, 255);
-    padding: 10px;
-    border-radius: 5px;
-    margin-top: 10px;
-    color: #000000;
-  }
-  
-  ul li.active .dropdown-content {
-    display: block;
-  }
-  
+  background: #1E1E1E; /* Dark background */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  font-family: 'Helvetica', 'Arial', sans-serif; /* Use Helvetica for main font */
+}
+
+.info-container h2 {
+  margin-bottom: 20px;
+  color: #4b8dff; /* Blue accent color for header */
+  font-family: 'Helvetica', 'Arial', sans-serif; /* Use Helvetica for headers */
+  font-weight: 700;
+}
+
+.info-container ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.info-container ul li {
+  background: #2a313d; /* Dark list item background */
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 5px;
+  color: #E0E0E0; /* Light text color */
+  cursor: pointer;
+  position: relative;
+}
+
+.info-container ul li:hover {
+  background: #4b8dff; /* Blue background on hover */
+}
+
+.dropdown-content {
+  display: none;
+  background: #2a313d; /* Match dropdown background to list item */
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+  color: #E0E0E0;
+}
+
+ul li.active .dropdown-content {
+  display: block;
+}

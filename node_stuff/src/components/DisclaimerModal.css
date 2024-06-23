@@ -1,0 +1,45 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background: #1E1E1E; /* Dark background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    color: #E0E0E0; /* Light text color */
+    max-width: 500px;
+    text-align: center;
+  }
+  
+  .modal-content h2 {
+    margin-top: 0;
+    color: #4b8dff; /* Blue accent color */
+  }
+  
+  .close-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4b8dff; /* Blue accent color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Helvetica', 'Arial', sans-serif; /* Use Helvetica for buttons */
+    font-weight: 700;
+    transition: background-color 0.3s;
+  }
+  
+  .close-button:hover {
+    background-color: #3d6bff; /* Darker blue on hover */
+  }
+  

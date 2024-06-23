@@ -15,6 +15,7 @@ function Info() {
     { name: 'Seborrheic Keratoses and other Benign Tumors', description: 'Seborrheic keratoses are non-cancerous (benign) skin growths. They often appear as brown, black, or light tan growths on the face, chest, shoulders, or back.' },
     { name: 'Tinea Ringworm Candidiasis and other Fungal Infections', description: 'Tinea is a fungal infection of the skin, commonly called ringworm. It can affect the skin on your body, scalp, feet, or nails. Candidiasis is a fungal infection caused by a yeast (a type of fungus) called Candida.' },
     { name: 'Warts Molluscum and other Viral Infections', description: 'Warts are small growths on the skin caused by a viral infection, specifically by one of the many types of human papillomavirus (HPV). Molluscum contagiosum is a viral infection that results in small, benign raised lesions.' },
+    { name: 'Other Diseases', description: 'Currently, our AI-powered skin disease detection tool is capable of identifying only 10 specific skin conditions. This limitation is due to the constraints in our training model and the availability of high-quality data. We are continuously working to improve our model and expand its capabilities to include a broader range of skin diseases. Thank you for your understanding and patience as we strive to enhance the accuracy and scope of our AI tool.'},
   ];
 
   const handleToggle = (index) => {
