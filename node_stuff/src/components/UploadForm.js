@@ -2,18 +2,18 @@ import React, { useState } from "react";
 import "./UploadForm.css";
 
 const disease_list = [
-    { id: 0, name: "Melanoma" },
-    { id: 1, name: "Melanocytic nevus" },
-    { id: 2, name: "Basal cell carcinoma" },
-    { id: 3, name: "Actinic keratosis" },
+    { id: 4, name: "Melanoma" },
+    { id: 5, name: "Melanocytic nevus" },
+    { id: 6, name: "Basal cell carcinoma" },
+    { id: 7, name: "Actinic keratosis" },
     {
-        id: 4,
+        id: 8,
         name: "Benign keratosis (solar lentigo / seborrheic keratosis / lichen planus-like keratosis)",
     },
-    { id: 5, name: "Dermatofibroma" },
-    { id: 6, name: "Vascular lesion" },
-    { id: 7, name: "Squamous cell carcinoma" },
-    { id: 8, name: "None of the others" },
+    { id: 0, name: "Dermatofibroma" },
+    { id: 1, name: "Vascular lesion" },
+    { id: 2, name: "Squamous cell carcinoma" },
+    { id: 3, name: "None of the others" },
 ];
 
 function UploadForm() {
