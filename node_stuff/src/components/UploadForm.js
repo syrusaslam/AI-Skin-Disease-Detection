@@ -73,7 +73,7 @@ function UploadForm() {
         {error && <p className="error">{error}</p>}
         {file && (
           <div className="image-preview">
-            <img src={URL.createObjectURL(file)} alt="Preview" />
+            <img src={URL.createObjectURL(file)} alt="Preview" style={{ maxWidth: '500px' }} />
           </div>
         )}
         <button type="submit" disabled={!file}>Upload</button>
