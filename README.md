@@ -1,7 +1,7 @@
 # AI-Skin-Disease-Detection
 # AI-Based Skin Disease Detection
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
+
 
 ## Table of Contents
 - [Introduction](#introduction)
