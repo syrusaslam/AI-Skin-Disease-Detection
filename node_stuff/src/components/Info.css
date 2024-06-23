@@ -20,7 +20,7 @@
   }
   
   .info-container ul li {
-    background: #2C2C2C; /* List item background color */
+    background: #4b8dff; /* List item background color */
     margin: 5px 0;
     padding: 10px;
     border-radius: 5px;
@@ -35,11 +35,11 @@
   
   .dropdown-content {
     display: none;
-    background: #333;
+    background: rgb(255, 255, 255);
     padding: 10px;
     border-radius: 5px;
     margin-top: 10px;
-    color: #E0E0E0;
+    color: #000000;
   }
   
   ul li.active .dropdown-content {
