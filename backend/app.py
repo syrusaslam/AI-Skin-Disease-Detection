@@ -12,21 +12,21 @@ import os
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
 
-# # Define the ViT model class
-# class ViTDetector(nn.Module):
-#     def __init__(self, backbone='vit_base_patch16_224', num_classes=10):
-#         super().__init__()
-#         self.backbone = timm.create_model(backbone, pretrained=True, num_classes=num_classes)
+# Define the ViT model class
+class ViTDetector(nn.Module):
+    def __init__(self, backbone='resnet50', num_classes=10):
+        super().__init__()
+        self.backbone = timm.create_model(backbone, pretrained=True, num_classes=num_classes)
 
-#     def forward(self, x):
-#         x = self.backbone(x)
-#         return x
+    def forward(self, x):
+        x = self.backbone(x)
+        return x
 
-# # Load your pre-trained ViT model
-# model = ViTDetector()
-# model_path = os.path.join(os.path.dirname(__file__), "checkpoints_vit_base_patch16_224.augreg_in21k_epoch4")
-# model.load_state_dict(torch.load(model_path, map_location=torch.device('cpu')))
-# model.eval()
+# Load your pre-trained ViT model
+model = ViTDetector()
+model_path = os.path.join(os.path.dirname(__file__), "checkpoints_resnet50_epoch1")
+model.load_state_dict(torch.load(model_path, map_location=torch.device('cpu')))
+model.eval()
 
 def transform_image(image_bytes):
     transform = transforms.Compose([
@@ -38,10 +38,9 @@ def transform_image(image_bytes):
 
 def get_prediction(image_bytes):
     tensor = transform_image(image_bytes)
-    return 0
     outputs = model(tensor)
-    _, predicted = torch.max(outputs.data, 1)
-    return predicted.item()
+    predicted_class = torch.argmax(outputs.data, dim=1).item()
+    return predicted_class
 
 @app.route('/upload', methods=['POST'])
 def upload():
