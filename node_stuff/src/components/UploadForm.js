@@ -6,6 +6,7 @@ function UploadForm() {
   const [error, setError] = useState('');
 
   const handleChange = (e) => {
+    setError('');
     const selectedFile = e.target.files[0];
     const validTypes = ['image/jpeg', 'image/jpg'];
 
@@ -35,8 +36,10 @@ function UploadForm() {
           throw new Error('Failed to upload file');
         }
 
+        const data = await response.json();
+
         // Handle successful upload
-        console.log('File uploaded successfully');
+        console.log('File uploaded successfully with prediction:', data.prediction);
       } catch (error) {
         console.error('Error uploading file:', error.message);
         setError('Failed to upload file');
@@ -49,13 +52,13 @@ function UploadForm() {
       <form onSubmit={handleSubmit} className="upload-form">
         <input type="file" accept=".jpg,.jpeg" onChange={handleChange} />
         {error && <p className="error">{error}</p>}
-        <button type="submit" disabled={!file}>Upload</button>
-      </form>
         {file && (
           <div className="image-preview">
             <img src={URL.createObjectURL(file)} alt="Preview" />
           </div>
         )}
+        <button type="submit" disabled={!file}>Upload</button>
+      </form>
     </>
   );
 }
