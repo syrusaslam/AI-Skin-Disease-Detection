@@ -46,9 +46,16 @@ To run this project locally, follow these steps:
 
 4. **Download the dataset** (see [Dataset](#dataset) section)
 
-5. **Run the application**
+5. **Run the backend Server**
     ```bash
-    python app.py
+    python backend/app.py
+    ```
+    
+5. **Run the frontend**
+    ```bash
+    cd node_stuff
+    npm install
+    npm start
     ```
 
 ## Usage
@@ -58,27 +65,11 @@ To run this project locally, follow these steps:
 4. View the results and the detailed report.
 
 ## Dataset
-The dataset used for training and testing the model can be found [here](link_to_dataset). It contains thousands of labeled images of various skin conditions.
+The dataset used for training and testing the model can be found [here](https://challenge.isic-archive.com/landing/2019/). 25,331 images are available for training across 8 different categories. Additionally, the test dataset (planned release August 2nd) will contain an additional outlier class not represented in the training data, which developed systems must be able to identify.
 
 ## Model
-The model is built using TensorFlow/Keras and is based on a convolutional neural network (CNN) architecture. The architecture includes several convolutional layers, pooling layers, and fully connected layers designed to extract features from images and classify them into different skin disease categories.
+The model architecture is based on a convolutional neural network (CNN) implemented using Pytorch. It is using ResNet for backbone, and leverages contrastive learning. The implementation is inspired by the work found in the [ECL GitHub repository](https://github.com/zylbuaa/ECL/tree/main).
 
-## Results
-The model achieves an accuracy of X% on the validation set. Below are some example predictions:
-
-| Image | Predicted | Actual |
-|-------|-----------|--------|
-| ![Image1](link_to_image1) | Disease A | Disease A |
-| ![Image2](link_to_image2) | Disease B | Disease B |
-| ![Image3](link_to_image3) | Disease C | Disease C |
-
-## Contributing
-Contributions are welcome! Please follow these steps to contribute:
-
-steps to be added....
-
-## Contact
-For any inquiries or issues, please contact:
 
 - **Name**: Your Name
 - **Email**: your.email@example.com
