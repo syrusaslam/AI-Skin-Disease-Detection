@@ -84,3 +84,6 @@ For any inquiries or issues, please contact:
 - **Email**: your.email@example.com
 - **GitHub**: [yourusername](https://github.com/yourusername)
 
+To install imports: pip install -r requirements.txt
+
+
