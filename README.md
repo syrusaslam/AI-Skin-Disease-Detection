@@ -71,7 +71,7 @@ The dataset used for training and testing the model can be found [here](https://
 The model architecture is based on a convolutional neural network (CNN) implemented using Pytorch. It is using ResNet for backbone, and leverages contrastive learning. The implementation is inspired by the work found in the [ECL GitHub repository](https://github.com/zylbuaa/ECL/tree/main).
 
 
-- **Name**: Your Name
-- **Email**: your.email@example.com
-- **GitHub**: [yourusername](https://github.com/yourusername)
+- **Name**: Syrus Aslam
+- **Email**: syrusa663@gmail.com
+- **GitHub**: [syrusaslam](https://github.com/syrusaslam)
 
